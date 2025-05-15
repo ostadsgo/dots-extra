@@ -1,21 +1,21 @@
 #! /usr/bin/sh
 
 # Xorg
-sudo xbps-install xorg-minimal xinit xauth xsetroot\
-  # Devel
-  base-devel libX11-devel libXft-devel libXinerama-devel\
-  # Font / sound
-  adobe-source-code-pro font-vazir pulseaudio \
-  # X
-  xclip xset setxkbmap xinput xprop xrandr \
-  # TOOLS
-  ffmpeg wget curl htop \
-  # Misc
-  xdg-user-dirs xdg-utils \
-  # Dev
-  neovim tmux uv python git fzf zoxide \
-  # Apps
-  firefox pcmanfm sxiv zathura zathura-pdf-mupdf 
+sudo xbps-install xorg-minimal xinit xauth xsetroot
+# Devel
+sudo xbps-install  base-devel libX11-devel libXft-devel libXinerama-devel
+# Font / sound
+sudo xbps-install  font-adobe-source-code-pro font-vazir font-inter pulseaudio 
+# X
+sudo xbps-install xclip xset setxkbmap xinput xprop xrandr 
+# TOOLS
+sudo xbps-install  ffmpeg wget curl htop dmenu
+# Misc
+sudo xbps-install  xdg-user-dirs xdg-utils 
+# Dev
+sudo xbps-install  neovim tmux uv python git fzf zoxide 
+# Apps
+sudo xbps-install  firefox pcmanfm sxiv zathura zathura-pdf-mupdf 
 
 
 ### Basic Sys config
@@ -33,6 +33,9 @@ sudo make clean install
 # Make home directories.
 cd
 mkdir dl dox vids pix
+
+mkdir dox/repos
+mkdir dox/ebooks
 
 
 # Link to important configs
