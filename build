@@ -44,22 +44,8 @@ ln -s --force ~/.dots/tmux ~/.config/tmux
 ln -s --force ~/.dots/.xinitrc ~/.xinitrc
 ln -s --force ~/.dots/.bashrc ~/.bashrc
 
-# user-dirs
-wget https://gist.githubusercontent.com/ostadsgo/f44ff05615e26917c4b2240657ebb528/raw/2e2a3a426a405666360cc13ecd8c5f78b2c48abf/user-dirs.dirs
-mv user-dirs.dirs  ~/.config
-xdg-user-dirs-update
-
-# mimeapps
-wget https://gist.githubusercontent.com/ostadsgo/989b352f5ac58014470c5076a9f4a5e5/raw/8805918d27fef264084f0d8df8696916d8a22ba1/mimeapps.list
-mv mimeapps.list ~/.config
-
-# fonts config
-wget https://gist.githubusercontent.com/ostadsgo/90474fd20f2c4ef4f82d9d8b58f80f2b/raw/f64576456611f4f642f0fd7f69356b95e9335fdb/fonts.conf
-mkdir ~/.config/fontconfig
-mv fonts.conf ~/.config/fontconfig
-
-# gitconfig
-wget https://gist.githubusercontent.com/ostadsgo/8c6f6c587a3bd3312a3bf9ad7c2f8386/raw/941abb09807fdd183598af906cd7a1b0b02633a7/.gitconfig
-
-
+cp ~/scripts/mimeapps.list ~/.config/mimeapps.list
+cp ~/scripts/user-dirs.dirs  ~/.config/user-dirs.dirs
+cp ~/scripts/.gitconfig ~/.gitconfig
+cp -r ~/scripts/fontconfig/ ~/.config/fontconfig
 
