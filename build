@@ -1,21 +1,21 @@
 #! /usr/bin/sh
 
 # Xorg
-sudo xbps-install xorg-minimal xinit xauth xsetroot
+sudo xbps-install -y xorg-minimal xinit xauth xsetroot
 # Devel
-sudo xbps-install  base-devel libX11-devel libXft-devel libXinerama-devel
+sudo xbps-install -y base-devel libX11-devel libXft-devel libXinerama-devel
 # Font / sound
-sudo xbps-install  font-adobe-source-code-pro font-vazir font-inter pulseaudio 
+sudo xbps-install -y font-adobe-source-code-pro font-vazir font-inter pulseaudio 
 # X
-sudo xbps-install xclip xset setxkbmap xinput xprop xrandr 
+sudo xbps-install -y xclip xset setxkbmap xinput xprop xrandr 
 # TOOLS
-sudo xbps-install  ffmpeg wget curl htop dmenu
+sudo xbps-install -y ffmpeg wget curl htop dmenu
 # Misc
-sudo xbps-install  xdg-user-dirs xdg-utils 
+sudo xbps-install -y xdg-user-dirs xdg-utils 
 # Dev
-sudo xbps-install  neovim tmux uv python git fzf zoxide 
+sudo xbps-install -y neovim tmux uv python git fzf zoxide 
 # Apps
-sudo xbps-install  firefox pcmanfm sxiv zathura zathura-pdf-mupdf 
+sudo xbps-install -y firefox pcmanfm sxiv zathura zathura-pdf-mupdf 
 
 
 ### Basic Sys config
@@ -50,7 +50,7 @@ mv user-dirs.dirs  ~/.config
 xdg-user-dirs-update
 
 # mimeapps
-wget https://gist.githubusercontent.com/ostadsgo/989b352f5ac58014470c5076a9f4a5e5/raw/86a4c80554791041eebf343d71d79235a533349a/mimeapps.list
+wget https://gist.githubusercontent.com/ostadsgo/989b352f5ac58014470c5076a9f4a5e5/raw/8805918d27fef264084f0d8df8696916d8a22ba1/mimeapps.list
 mv mimeapps.list ~/.config
 
 # fonts config
