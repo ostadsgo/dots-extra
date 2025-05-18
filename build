@@ -44,8 +44,9 @@ ln -s --force ~/.dots/tmux ~/.config/tmux
 ln -s --force ~/.dots/.xinitrc ~/.xinitrc
 ln -s --force ~/.dots/.bashrc ~/.bashrc
 
-cp ~/scripts/mimeapps.list ~/.config/mimeapps.list
-cp ~/scripts/user-dirs.dirs  ~/.config/user-dirs.dirs
-cp ~/scripts/.gitconfig ~/.gitconfig
+cp ~/void/mimeapps.list ~/.config/mimeapps.list
+cp ~/void/user-dirs.dirs  ~/.config/user-dirs.dirs
+cp ~/void/.gitconfig ~/.gitconfig
 cp -r ~/scripts/fontconfig/ ~/.config/fontconfig
 
+mv ~/void ~/dox/repos 
