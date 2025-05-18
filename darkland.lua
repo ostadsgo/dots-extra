@@ -9,11 +9,11 @@ vim.g.colors_name = "darkland"
 -- colors
 local bg = "#000000"
 local black = "#191919"
-local fg = "#cccccc"
-local white = "#eeeeee"
+local fg = "#b8b8b8"
+local white = "#ebebeb"
 local red = "#984936"
 local blue = "#708090"
-local green = "#789878"
+local green = "#3A5F3A"
 local dark_gray = "#333333"
 local mid_gray = "#454545"
 local light_gray = "#696969"
@@ -26,7 +26,7 @@ end
 -- Custom Groups
 hi("Prim", {fg = green, bg=nil})
 hi("White", {fg = white, bg=nil})
-hi("Red", {fg = white, bg=nil})
+hi("Red", {fg = red, bg=nil})
 hi("LightGray", {fg = light_gray, bg=nil})
 hi("DarkGray", {fg = dark_gray, bg=nil})
 hi("MidGray", {fg = mid_gray, bg=nil})
@@ -39,7 +39,7 @@ hi("InAcLine", {fg = mid_gray, bg=black})
 
 hi("Normal", { fg = fg })
 hi("Error", { bg = red })
-hi("MatchParen", { fg = red, bg = nil } )
+hi("MatchParen", { fg = white, bg = nil } )
 hi("LineNr", { link = "MidGray" })
 
 hi("Todo", { link = "Sel" } )
@@ -142,7 +142,7 @@ hi("ComplMatchIns", { link = "Normal" })
 hi("PopupSelected", { link = "Normal" })
 hi("Question", { link = "Normal" })
 hi("QuickFixLine", { link = "Normal" })
-hi("Search", { link = "Normal" })
+hi("Search", { link = "Sel" })
 hi("CurSearch", { link = "Normal" })
 hi("SpecialKey", { link = "Normal" })
 hi("SpellBad", { link = "Red" })
@@ -170,3 +170,6 @@ hi("WildMenu", { link = "Sel" })
 -- HTML
 hi("htmlTag", { link = "LightGray" })
 hi("htmlEndTag", { link = "LightGray" })
+
+-- Mini Picker
+--
