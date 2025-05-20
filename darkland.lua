@@ -10,10 +10,10 @@ vim.g.colors_name = "darkland"
 local bg = "#000000"
 local black = "#191919"
 local fg = "#b8b8b8"
-local white = "#ebebeb"
+local white = "#cfcfcf"
 local red = "#984936"
 local blue = "#708090"
-local green = "#3A5F3A"
+local green = "#5F7161"
 local dark_gray = "#333333"
 local mid_gray = "#454545"
 local light_gray = "#696969"
@@ -24,31 +24,30 @@ local function hi(group, hl)
 end
 
 -- Custom Groups
-hi("Prim", {fg = green, bg=nil})
+hi("Green", {fg = green, bg=nil})
 hi("White", {fg = white, bg=nil})
 hi("Red", {fg = red, bg=nil})
 hi("LightGray", {fg = light_gray, bg=nil})
 hi("DarkGray", {fg = dark_gray, bg=nil})
 hi("MidGray", {fg = mid_gray, bg=nil})
-hi("Accent", {fg = blue, bg=nil})
-hi("Kw", {fg = light_gray, bg=nil})
+hi("Blue", {fg = blue, bg=nil})
 hi("Popup", {fg = fg, bg=black})
 hi("Sel", {fg = fg, bg=red})
 hi("Line", {fg = fg, bg=black})
 hi("InAcLine", {fg = mid_gray, bg=black})
+hi("None", {fg = nil, bg=nil})
 
 hi("Normal", { fg = fg })
 hi("Error", { bg = red })
 hi("MatchParen", { fg = white, bg = nil } )
+hi("NonText", { fg = bg })  -- ~ at the end of buffer
+
 hi("LineNr", { link = "MidGray" })
-
 hi("Todo", { link = "Sel" } )
-hi("IncSearch", { link = "Sel" } )
-
-hi("Comment", { link = "Accent" } )
-hi("SpecialComment", { link = "Comment" })
-
-hi("String", { link = "Prim" }) 
+hi("IncSearch", { link = "Sel" })
+hi("Comment", { link = "Blue" })
+hi("SpecialComment", { link = "Blue" })
+hi("String", { link = "Green" }) 
 
 hi("Constant", { link = "Normal" })
 hi("Character", { link = "Normal" })
@@ -62,16 +61,6 @@ hi("Statement", { link = "LightGray" })
 hi("Conditional", { link = "LightGray" })
 hi("Repeat", { link = "LightGray" })	
 hi("Label", { link = "LightGray" })  
-hi("Operator", { link = "LightGray" })
-hi("Keyword", { link = "LightGray" })
-hi("Exception", { link = "LightGray" })
-
-hi("Identifier", { link = "Normal" })
-hi("Function", { link = "White" })
-hi("Statement", { link = "LightGray" })
-hi("Conditional", { link = "LightGray" })
-hi("Repeat", { link = "LightGray" })	
-hi("Label", { link = "LightGray" })
 hi("Operator", { link = "LightGray" })
 hi("Keyword", { link = "LightGray" })
 hi("Exception", { link = "LightGray" })
@@ -106,7 +95,7 @@ hi("Conceal", { link = "Normal" })
 hi("lCursor", { link = "Black" })
 hi("CursorIM", { link = "Black" })
 hi("CursorLine", { link = "Line" })
-hi("Directory", { link = "Accent" })
+hi("Directory", { link = "Blue" })
 hi("DiffAdd", { link = "Green" })
 hi("DiffChange", { link = "Green" })
 hi("DiffDelete", { link = "Red" })
@@ -138,7 +127,7 @@ hi("PmenuSbar", { link = "Normal" })
 hi("PmenuThumb", { link = "Normal" })
 hi("PmenuMatch", { link = "White" })
 hi("PmenuMatchSel", { link = "Normal" })
-hi("ComplMatchIns", { link = "Normal" })
+hi("ComplMatchIns", { link = "None" })
 hi("PopupSelected", { link = "Normal" })
 hi("Question", { link = "Normal" })
 hi("QuickFixLine", { link = "Normal" })
@@ -167,9 +156,12 @@ hi("VisualNOS", { link = "Normal" })
 hi("WarningMsg", { link = "Normal" })
 hi("WildMenu", { link = "Sel" })
 
+hi("DiagnosticError", { link = "Red" })
+hi("DiagnosticWarn", { link = "MidGray" })
+hi("DiagnosticInfo", { link = "Blue" })
+hi("DiagnosticHint", { link = "Blue" })
+hi("DiagnosticOk", { link = "Green" })
+
 -- HTML
 hi("htmlTag", { link = "LightGray" })
 hi("htmlEndTag", { link = "LightGray" })
-
--- Mini Picker
---
