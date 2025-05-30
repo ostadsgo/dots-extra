@@ -15,20 +15,11 @@ sudo xbps-install -y xdg-user-dirs xdg-utils
 # Dev
 sudo xbps-install -y neovim tmux uv python git fzf zoxide 
 # Apps
-sudo xbps-install -y firefox pcmanfm sxiv zathura zathura-pdf-mupdf 
+sudo xbps-install -y firefox pcmanfm sxiv zathura zathura-pdf-mupdf papirus-icon-theme
 
 
 ### Basic Sys config
 sudo rm /var/service/agetty-tty{3,4,5,6}
-
-
-### App Config
-cd ~/.dots
-cd dwm
-sudo make clean install 
-cd ..
-cd st
-sudo make clean install
 
 # Make home directories.
 cd
@@ -37,16 +28,37 @@ mkdir dl dox vids pix
 mkdir dox/repos
 mkdir dox/ebooks
 
+# Clone dotfiles
+git clone git@github.com:ostadsgo/dots
+git clone git@github.com:ostadsgo/dots-extra
+mv dots ~/dox/repos/
+mv dots-extra ~/dox/repos/
+
+### Build `dwm` and `st`
+cd ~/dox/repos/dots
+cd dwm
+sudo make clean install 
+
+cd ..
+cd st
+sudo make clean install
+
 
 # Link to important configs
-ln -s --force ~/.dots/nvim ~/.config/nvim
-ln -s --force ~/.dots/tmux ~/.config/tmux
-ln -s --force ~/.dots/.xinitrc ~/.xinitrc
-ln -s --force ~/.dots/.bashrc ~/.bashrc
+ln -s --force ~/dox/repos/dots/nvim ~/.config/nvim
+ln -s --force ~/dox/repos/dots/tmux ~/.config/tmux
+ln -s --force ~/dox/repos/dots/.xinitrc ~/.xinitrc
+ln -s --force ~/dox/repos/dots/.bashrc ~/.bashrc
 
-cp ~/void/mimeapps.list ~/.config/mimeapps.list
-cp ~/void/user-dirs.dirs  ~/.config/user-dirs.dirs
-cp ~/void/.gitconfig ~/.gitconfig
-cp -r ~/scripts/fontconfig/ ~/.config/fontconfig
+# Git config
+ln -s --force ~/dox/repos/dots-extra/.gitconfig ~/.gitconfig
 
-mv ~/void ~/dox/repos 
+ln -s --force ~/dox/repos/dots-extra/mimeapps.list ~/.config/mimeapps.list
+ln -s --force ~/dox/repos/dots-extra/user-dirs.dirs  ~/.config/user-dirs.dirs
+
+ln -s --force ~/dox/repos/dots-extra/fontconfig/ ~/.config/fontconfig
+
+# GTK
+sudo ln -s --force ~/dox/repos/dots-extra/Orchis-Red-Dark-Compact/ /usr/share/themes
+ln -s --force ~/dox/repos/dots-extra/gtk-3.0/ ~/.config
+

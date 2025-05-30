@@ -10,10 +10,10 @@ vim.g.colors_name = "darkland"
 local bg = "#000000"
 local black = "#191919"
 local fg = "#b8b8b8"
-local white = "#cfcfcf"
+local white = "#f1f1f1"
 local red = "#984936"
 local blue = "#708090"
-local green = "#5F7161"
+local green = "#789978"
 local dark_gray = "#333333"
 local mid_gray = "#454545"
 local light_gray = "#696969"
@@ -26,28 +26,31 @@ end
 -- Custom Groups
 hi("Green", {fg = green, bg=nil})
 hi("White", {fg = white, bg=nil})
-hi("Red", {fg = red, bg=nil})
-hi("LightGray", {fg = light_gray, bg=nil})
+hi("Red", {fg = red, bgjnil})
 hi("DarkGray", {fg = dark_gray, bg=nil})
 hi("MidGray", {fg = mid_gray, bg=nil})
 hi("Blue", {fg = blue, bg=nil})
 hi("Popup", {fg = fg, bg=black})
 hi("Sel", {fg = fg, bg=red})
-hi("Line", {fg = fg, bg=black})
-hi("InAcLine", {fg = mid_gray, bg=black})
+hi("Line", {fg = fg, bg=black })
+hi("InAcLine", { fg = mid_gray, bg=black })
 hi("None", {fg = nil, bg=nil})
 
-hi("Normal", { fg = fg })
+hi("Primary", {fg = light_gray, bg=nil})
+hi("Secondary", {fg = light_gray , bg=nil})
+
+hi("Normal", { fg = fg, bg = bg })
 hi("Error", { bg = red })
-hi("MatchParen", { fg = white, bg = nil } )
-hi("NonText", { fg = bg })  -- ~ at the end of buffer
+hi("NonText", { fg = bg })  -- at the end of buffer `~` sign at the end
+hi("Todo", { link = "Green" } )
+
+hi("MatchParen", { link = "Popup" })
 
 hi("LineNr", { link = "MidGray" })
-hi("Todo", { link = "Sel" } )
 hi("IncSearch", { link = "Sel" })
-hi("Comment", { link = "Blue" })
-hi("SpecialComment", { link = "Blue" })
-hi("String", { link = "Green" }) 
+hi("Comment", { link = "Green" })
+hi("SpecialComment", { link = "Green" })
+hi("String", { link = "Secondary" }) 
 
 hi("Constant", { link = "Normal" })
 hi("Character", { link = "Normal" })
@@ -57,29 +60,29 @@ hi("Float", { link = "Normal" })
 
 hi("Identifier", { link = "Normal" })  
 hi("Function", { link = "White" })   
-hi("Statement", { link = "LightGray" })
-hi("Conditional", { link = "LightGray" })
-hi("Repeat", { link = "LightGray" })	
-hi("Label", { link = "LightGray" })  
-hi("Operator", { link = "LightGray" })
-hi("Keyword", { link = "LightGray" })
-hi("Exception", { link = "LightGray" })
+hi("Statement", { link = "Primary" })
+hi("Conditional", { link = "Primary" })
+hi("Repeat", { link = "Primary" })	
+hi("Label", { link = "Primary" })  
+hi("Operator", { link = "Primary" })
+hi("Keyword", { link = "Primary" })
+hi("Exception", { link = "Primary" })
 
-hi("PreProc", { link = "LightGray" })
-hi("Include", { link = "LightGray" })
-hi("Define", { link = "LightGray" })
-hi("Macro", { link = "LightGray" })
-hi("PreCondit", { link = "LightGray" }) 
+hi("PreProc", { link = "Primary" })
+hi("Include", { link = "Primary" })
+hi("Define", { link = "Primary" })
+hi("Macro", { link = "Primary" })
+hi("PreCondit", { link = "Primary" }) 
 
-hi("Type", { link = "LightGray" })
-hi("StorageClass", { link = "LightGray" })
-hi("Structure", { link = "LightGray" })
-hi("Typedef", { link = "LightGray" })
+hi("Type", { link = "Primary" })
+hi("StorageClass", { link = "Primary" })
+hi("Structure", { link = "Primary" })
+hi("Typedef", { link = "Primary" })
 
-hi("Special", { link = "LightGray" })
-hi("SpecialChar", { link = "LightGray" })
-hi("Tag", { link = "LightGray" }) 
-hi("Delimiter", { link = "LightGray" })
+hi("Special", { link = "Primary" })
+hi("SpecialChar", { link = "Primary" })
+hi("Tag", { link = "Primary" }) 
+hi("Delimiter", { link = "Primary" })
 hi("Debug", { link = "Red" })
 
 hi("Underlined", { link = "Red" })  
@@ -103,7 +106,7 @@ hi("DiffText", { link = "Normal" })
 hi("DiffTextAdd", { link = "Green" })
 
 hi("ErrorMsg", { link = "Red" })
-hi("VertSplit", { link = "Red" })
+hi("WinSeparator", { link = "Red" })
 hi("Folded", { link = "Normal" })
 hi("FoldColumn", { link = "Normal" })
 hi("SignColumn", { link = "Normal" })
@@ -126,7 +129,7 @@ hi("PmenuExtraSel", { link = "Normal" })
 hi("PmenuSbar", { link = "Normal" })
 hi("PmenuThumb", { link = "Normal" })
 hi("PmenuMatch", { link = "White" })
-hi("PmenuMatchSel", { link = "Normal" })
+hi("PmenuMatchSel", { link = "Sel" })
 hi("ComplMatchIns", { link = "None" })
 hi("PopupSelected", { link = "Normal" })
 hi("Question", { link = "Normal" })
@@ -163,5 +166,5 @@ hi("DiagnosticHint", { link = "Blue" })
 hi("DiagnosticOk", { link = "Green" })
 
 -- HTML
-hi("htmlTag", { link = "LightGray" })
-hi("htmlEndTag", { link = "LightGray" })
+hi("htmlTag", { link = "Primary" })
+hi("htmlEndTag", { link = "Primary" })
